@@ -10,8 +10,8 @@ export const getAllTasks = async () =>
   await axios.get("http://localhost:8080/api/v1/tasks");
 
 //api to update a the completed
-export const updateCompleted = async (id,completed) =>
-  await axios.patch(`http://localhost:8080/api/v1/tasks/${id}`, {completed:completed });
+export const updateCompleted = async (id,completed,dolater) =>
+  await axios.patch(`http://localhost:8080/api/v1/tasks/${id}`, {completed:completed,dolater:false});
 
 //api to update a task name
 export const updateTask = async (id,name,dolater) =>

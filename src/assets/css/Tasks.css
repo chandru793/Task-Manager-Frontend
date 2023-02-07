@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+* {
+    transition: 0.2s;
+}
+
 .task{
     background: #4e4e5c;
     margin: 10px;

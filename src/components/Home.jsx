@@ -15,15 +15,17 @@ import Tasks from './Tasks'
 const Home = () => {
     const [task, setTask] = useState(``);
     const [allTasks, setAllTasks] = useState([]);
+    const [toggle, setToggle] = useState([true, false, false]);
+
+
+    const filteredTasks = allTasks.filter((task) => task.dolater === false && task.completed === false);
+    const filteredDoLater = allTasks.filter((task) => task.dolater === true && task.completed === false);
+    const filterCompleted = allTasks.filter((task) => task.completed === true);
 
 
     const initialValues = () => ({
         task: task,
     })
-
-    // const segmentSchema = Yup.object().shape({
-    //     tasK: Yup.string().min(3, 'Too short!'),
-    // });
 
     useEffect(() => {
         getAllTasks()
@@ -64,13 +66,45 @@ const Home = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
-                        {errors.task && touched.task ? <h1>{errors.task}</h1> : null}
-                        <button type='submit' className='submitButton'><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 20 20" width="40px" fill="#FFFFFF" className='addsvg'><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button>
+                        <button type='submit' className='submitButton'><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 20 20" width="40px" fill="#FFFFFF" className='addsvg'><path d="M0 0h24v24H0V0z" fill="none" /><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg></button>
                     </form>
                 )}
             </Formik>
 
-            <Tasks allTasks={allTasks} setAllTasks={setAllTasks} />
+            {filteredTasks.length > 0 &&
+                <div>
+                    <h2
+                        styles={{ alignItems: "start", color: "#fff" }}
+                        onClick={() => setToggle([!toggle[0], toggle[1], toggle[2]])}
+                    >
+                        In Progress:-
+                    </h2>
+                    {toggle[0] && <Tasks filtered={filteredTasks} />}
+                </div>
+            }
+            {filteredDoLater.length > 0 &&
+                <div>
+                    <h2
+                        styles={{ alignItems: "start", color: "#fff" }}
+                        onClick={() => setToggle([toggle[0], !toggle[1], toggle[2]])}
+                    >
+                        Do Later:-
+                    </h2>
+                    {toggle[1] && <Tasks filtered={filteredDoLater} />}
+                </div>
+            }
+            {filterCompleted.length > 0 &&
+                <div>
+                    <h2
+                        styles={{ alignItems: "start", color: "#fff" }}
+                        onClick={() => setToggle([toggle[0], toggle[1], !toggle[2]])}
+                    >
+                        Completed:-
+                    </h2>
+                    {toggle[2] && <Tasks filtered={filterCompleted} />}
+                </div>
+            }
+
         </div>
     )
 }
