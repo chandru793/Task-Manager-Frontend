@@ -1,0 +1,33 @@
+.input{
+    width:500px;
+    padding: 15px;
+    /* margin: 10px; */
+    font-size: 25px;
+    /* font-weight: bold; */
+    background: #2e2d34;
+    border: none;
+    color: #fff;
+}
+
+.input:focus,
+input:hover,
+input:active{
+    outline: none;
+    border: none;
+    background: #2e2d34;
+
+}
+.submitButton{
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin-left: -20px;
+    /* opacity: 0.3; */
+}
+.addsvg{
+    margin-left: -54px;
+    margin-bottom: -6px;
+}
