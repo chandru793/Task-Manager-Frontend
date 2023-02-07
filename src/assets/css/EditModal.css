@@ -1,31 +1,24 @@
 .outerDiv{
-    width: 100%;
-    height: 100%;
-    display:flex;
-    justify-content: end;
-}
-
-.outerDiv1{
-    width:25%;
-    height: 100%;
-    text-align: center;
-    /* background: #000; */
-}
-.outerDiv2{
-    width:100%;
-    height: 100%;
-    display: flex;
-    /* background-color: rgb(117, 152, 182); */
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
 }
 
 .innerDiv{
-    width: 100%;
-    height: 100%;
     background-color: #4e4e5c;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 500px;
+    padding: 0 10px;
+}
+
+.edit-heading {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .closeButton{
@@ -34,16 +27,14 @@
     border: none;
     outline: none;
     font-size: 25px;
-    position: absolute;
-    margin-left: -188px;
-    margin-top:5px;
 }
 
 .inputClass{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
     width: 100%;
-    align-items: start;
 }
 .label{
     margin-left: 10px;
@@ -51,7 +42,6 @@
 
 .editinput{
     padding: 10px;
-    width: 100%;
     margin: 10px;
     background-color: #83838d;
     color: #fff;
