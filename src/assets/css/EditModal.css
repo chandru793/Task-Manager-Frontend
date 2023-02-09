@@ -1,3 +1,6 @@
+* {
+    transition: 0.2s;
+}
 .outerDiv{
     position: absolute;
     top: 50%;
@@ -43,10 +46,19 @@
 .editinput{
     padding: 10px;
     margin: 10px;
+    width: 200px;
     background-color: #83838d;
     color: #fff;
     border: none;
     outline: none;
+    font-size: 15px;
+}
+.editinput:focus,
+.editinput:hover,
+.editinput:active{
+    outline: none;
+    border: none;
+    background: #83838d;
 }
 .divDoLater{
     display : flex;
@@ -59,4 +71,21 @@
 }
 .saveButton{
     margin: 10px;
+    background-color: #83838d;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px;
+    margin-bottom: 30px;
+    width: 80px;
+    border:none;
+    outline: none;
+    border-radius: 25px;
+}
+.saveButton:hover,
+.saveButton:focus,
+.saveButton:active{
+    background-color: #83838d;
+    outline: none;
+    border: none;
+    scale: 1.1;
 }

@@ -1,14 +1,18 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useContext } from 'react'
 import '../assets/css/EditModal.css'
 
 //api
 import { updateTask } from './Api';
+import { TaskContext } from '../context/TaskContext';
 
-const EditModal = ({ show, handleClose, edit, setEdit }) => {
-    // console.log("edit", edit)
-    // const [edit1, setEdit1] = useState(edit.name);
-    // const [dolater, setdoLater] = useState(edit.dolater);
+const EditModal = () => {
+    const {
+        show,
+        setShow,
+        handleClose,
+        edit,
+        setEdit,
+    } = useContext(TaskContext)
 
     const handleChange = () => {
         setEdit((e) => ({ ...e, dolater: !e.dolater }))
@@ -44,7 +48,7 @@ const EditModal = ({ show, handleClose, edit, setEdit }) => {
 
                     </div>
                 </div>
-                <button className='saveButton' onClick={() => { updateTask(edit._id, edit.name, edit.dolater); window.location.reload() }}>Save</button>
+                <button className='saveButton' onClick={() => { updateTask(edit._id, edit.name, edit.dolater); setShow(false) }}>Save</button>
 
             </div>
         </div>

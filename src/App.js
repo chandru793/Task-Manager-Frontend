@@ -1,14 +1,17 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 //components
-import Home from './components/Home'
+import Home from "./components/Home";
+import TaskState from "./context/TaskState";
 
 function App() {
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <TaskState>
+      <div className="App">
+        <Home />
+      </div>
+    </TaskState>
   );
 }
 
