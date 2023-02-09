@@ -1,18 +1,19 @@
-import {
-    TaskContext
-} from "./TaskContext";
-    
+import { TaskContext } from "./TaskContext";
 import { useState, useEffect } from "react";
-import{getAllTasks} from '../components/Api'
+import { getAllTasks } from "../components/Api";
 
-const TaskState = props => {
+const TaskState = (props) => {
     //Home
     const [allTasks, setAllTasks] = useState([]);
     const [task, setTask] = useState(``);
     const [toggle, setToggle] = useState([true, true, true]);
 
-    const filteredTasks = allTasks.filter((task) => task.dolater === false && task.completed === false);
-    const filteredDoLater = allTasks.filter((task) => task.dolater === true && task.completed === false);
+    const filteredTasks = allTasks.filter(
+        (task) => task.dolater === false && task.completed === false
+    );
+    const filteredDoLater = allTasks.filter(
+        (task) => task.dolater === true && task.completed === false
+    );
     const filterCompleted = allTasks.filter((task) => task.completed === true);
 
     //Tasks
@@ -22,22 +23,22 @@ const TaskState = props => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
     useEffect(() => {
         getAllTasks()
-            .then(res => {
-                console.log("effect")
-                console.log(res.data.task);
-                setAllTasks(res.data.task);
-                console.log("allTasks", allTasks);
-            }).catch(err => {
-                console.log(err);
-            });
-
+        .then((res) => {
+            console.log("effect");
+            console.log(res.data.task);
+            setAllTasks(res.data.task);
+            console.log("allTasks", allTasks);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     }, [allTasks]);
 
     return (
-        <TaskContext.Provider value={{
+        <TaskContext.Provider
+        value={{
             allTasks,
             setAllTasks,
             task,
@@ -52,10 +53,11 @@ const TaskState = props => {
             edit,
             setEdit,
             handleClose,
-            handleShow
-        }}>
-            {props.children}
+            handleShow,
+        }}
+        >
+        {props.children}
         </TaskContext.Provider>
-    )
-}
+    );
+};
 export default TaskState;
