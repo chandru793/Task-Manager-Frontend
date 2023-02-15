@@ -14,9 +14,10 @@
     margin: 10px;
     width: 500px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     padding: 15px;
+    padding-bottom: 0px;
 }
 
 .taskInner{
@@ -57,16 +58,6 @@
     text-align: start;
     justify-content: center;
 }
-.buttons{
-    /* width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    justify-content: end; */
-    /* justify-content: space-between;
-    width: 100%;
-    margin-left: 10px; */
-}
 .taskButton{
     background:transparent;
     fill: #fff;
@@ -87,4 +78,9 @@
 .svg{
     width: 30px;
     height: 30px;
+}
+
+.para{
+    padding-left: 45px;
+    margin-top: 0px;
 }

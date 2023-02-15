@@ -13,6 +13,10 @@
     justify-content: center;
     /* align-items: center; */
 }
+form{
+    display:flex;
+    flex-direction: column;
+}
 
 input,textarea{
     padding: 20px;
@@ -28,5 +32,16 @@ input,textarea{
     flex-direction: row;
     align-items: center;
     justify-content: start;
+    margin: 10px;
+}
+
+.addbutton{
+    padding:10px;
+    width: 120px;
+    background: #2e2d34;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 7px;
     margin: 10px;
 }

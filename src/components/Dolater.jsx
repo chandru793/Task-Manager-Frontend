@@ -12,7 +12,7 @@ const Dolater = () => {
 
     return (
 
-        <div>
+        <div className='main'>
             <h1>Do Later</h1>
             {filteredDoLater.length > 0 ?
                 <Tasks filtered={filteredDoLater} />

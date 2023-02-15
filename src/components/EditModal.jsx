@@ -36,6 +36,17 @@ const EditModal = () => {
                         onChange={(e) => { setEdit((tsk) => ({ ...tsk, name: e.target.value })) }}
                         placeholder='Task'
                     />
+                    <label for='description' className='label'>Description:</label>
+                    <textarea
+                        type='text'
+                        name='description'
+                        className='editinput'
+                        autoFocus
+                        value={edit.description}
+                        rows={5}
+                        onChange={(e) => { setEdit((tsk) => ({ ...tsk, description: e.target.value })) }}
+                        placeholder='Task'
+                    />
                     <div className='divDoLater'>
                         <input
                             type='checkbox'
@@ -48,7 +59,7 @@ const EditModal = () => {
 
                     </div>
                 </div>
-                <button className='saveButton' onClick={() => { updateTask(edit._id, edit.name, edit.dolater); setShow(false) }}>Save</button>
+                <button className='saveButton' onClick={() => { updateTask(edit._id, edit.name,edit.description, edit.dolater); setShow(false) }}>Save</button>
 
             </div>
         </div>

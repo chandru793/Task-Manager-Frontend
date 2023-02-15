@@ -12,7 +12,7 @@ const Completed = () => {
 
     return (
 
-        <div>
+        <div className='main'>
             <h1>Completed Tasks</h1>
             {filterCompleted.length > 0 ?
                 <Tasks filtered={filterCompleted} />

@@ -18,7 +18,6 @@ function App() {
         <Sidebar />
         <Routes>
           <Route path="/" element={<AddTasks />} />
-          <Route path="/addtask" element={<AddTasks />} />
           <Route path="/alltask" element={<AllTasks />} />
           <Route path="/inprogress" element={<InProgress />} />
           <Route path="/dolater" element={<Dolater />} />

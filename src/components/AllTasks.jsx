@@ -29,7 +29,7 @@ const AllTasks = () => {
 
     return (
         
-        <div>
+        <div className='main'>
             <h1>All Tasks</h1>
                 {filteredTasks.length > 0 &&
                     <div>

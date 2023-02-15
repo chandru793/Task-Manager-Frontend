@@ -7,7 +7,7 @@ const Sidebar = () => {
     <div className='outer'>
         <h2>TASK MANAGER</h2>
       <div className='inner'>
-        <Link Link to="/addtask" className='link'><h3>Add Task</h3></Link>
+        <Link Link to="/" className='link'><h3>Add Task</h3></Link>
         <span className='line'></span>
         <Link Link to="/alltask" className='link'><h3>All Tasks</h3></Link>
         <span className='line'></span>

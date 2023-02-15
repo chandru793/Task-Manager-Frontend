@@ -12,7 +12,7 @@ const InProgress = () => {
 
     return (
 
-        <div>
+        <div className='main'>
             <h1>In Progress</h1>
             {filteredTasks.length > 0 ?
                 <Tasks filtered={filteredTasks} />

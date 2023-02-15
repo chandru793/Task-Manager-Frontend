@@ -1,8 +1,8 @@
 import axios from "axios";
 
 //api to create new task
-export const createTask = async (task) => {
-  await axios.post("http://localhost:8080/api/v1/tasks", { name: task });
+export const createTask = async (task,description) => {
+  await axios.post("http://localhost:8080/api/v1/tasks", { name: task,description:description });
 };
 
 //api to get all tasks
@@ -14,7 +14,7 @@ export const updateCompleted = async (id,completed,dolater) =>
   await axios.patch(`http://localhost:8080/api/v1/tasks/${id}`, {completed:completed,dolater:false});
 
 //api to update a task name
-export const updateTask = async (id,name,dolater) =>
+export const updateTask = async (id,name,description,dolater) =>
   await axios.patch(`http://localhost:8080/api/v1/tasks/${id}`, { name:name,dolater:dolater });
 
 //api to delete a task
