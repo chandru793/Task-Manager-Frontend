@@ -1,6 +1,10 @@
 import React, { useContext } from 'react'
 import "../assets/css/Addtasks.css"
 
+//toast
+import { AddedSuccessfully } from '../Toast'
+
+//context
 import { TaskContext } from '../context/TaskContext'
 
 //axios
@@ -33,12 +37,13 @@ const AddTasks = () => {
             setDescription(e.description);
             createTask(e.task, e.description);
             console.log("Task Created");
+            AddedSuccessfully();
             onSubmitProps.resetForm();
           }}>
           {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) =>
             <form onSubmit={handleSubmit}>
               <input
-                type='text'
+                type='text' 
                 value={values.task}
                 name='task'
                 placeholder='Enter task'

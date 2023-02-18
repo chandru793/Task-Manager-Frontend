@@ -45,3 +45,10 @@ input,textarea{
     border-radius: 7px;
     margin: 10px;
 }
+
+.addbutton:hover,
+.addbutton:active,
+.addbutton:focus{
+    scale: 1.1;
+    letter-spacing: 0.15rem;
+}

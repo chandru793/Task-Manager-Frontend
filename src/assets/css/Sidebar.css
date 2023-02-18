@@ -1,5 +1,5 @@
 .outer{
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     transform: translate(0, 0);
@@ -14,8 +14,8 @@
     padding-top: 50px;
     align-items: start;
     justify-content: start;
-    height: 100%;
-    width: 100%;
+    border: none;
+    outline: none;
 }
  .line{
     border: 2px solid #403f4d;
@@ -25,4 +25,10 @@
  .link{
     text-decoration: none;
     color: #fff;
+ }
+
+ .link:hover,
+ .link:active,
+ .link:focus{
+    scale:1.1;
  }
